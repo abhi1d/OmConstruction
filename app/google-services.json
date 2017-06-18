@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "499707997496",
+    "firebase_url": "https://omconstruction-8c297.firebaseio.com",
+    "project_id": "omconstruction-8c297",
+    "storage_bucket": "omconstruction-8c297.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499707997496:android:ab87eb44c50ecbbc",
+        "android_client_info": {
+          "package_name": "com.example.abhi.omconstruction"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "499707997496-lteq4n3jvukkjdf5rs9osjoubqhkb5o8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.abhi.omconstruction",
+            "certificate_hash": "55938fc00c1f571a63b0fbe654804189ed07a4ed"
+          }
+        },
+        {
+          "client_id": "499707997496-jgl9o3nm8687e20una32t7le123sdnoe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABvddvFru6xgNaTOIca2MTyG3R4A_PrSQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "499707997496-jgl9o3nm8687e20una32t7le123sdnoe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

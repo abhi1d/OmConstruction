@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_program_details"
+            android:icon="@android:drawable/ic_dialog_map"
+            android:title="Program Dtails" />
+        <item
+            android:id="@+id/nav_products"
+            android:icon="@android:drawable/dialog_holo_dark_frame"
+            android:title="Products" />
+        <item
+            android:id="@+id/nav_rewards"
+            android:icon="@android:drawable/btn_star_big_on"
+            android:title="Rewards" />
+    </group>
+
+    <item android:title="Admin">
+        <menu>
+            <item
+                android:id="@+id/nav_data_entry"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Data Entry" />
+            <item
+                android:id="@+id/nav_notify"
+                android:icon="@android:drawable/radiobutton_on_background"
+                android:title="Notify" />
+        </menu>
+    </item>
+
+</menu>

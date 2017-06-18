@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login2">
+
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="140dp"
+        android:ems="10"
+        android:hint="example@omconstruction.com"
+        android:inputType="textEmailAddress"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:background="#0000ffff"
+        />
+
+    <EditText
+        android:id="@+id/editTextPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextEmail"
+        android:layout_marginTop="23dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:hint="************"/>
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:text="Authentication"
+        android:textColor="#ffff"
+        android:layout_below="@+id/editTextPass"
+        android:layout_alignParentEnd="true"
+        android:background="@color/colorPrimary"/>
+</RelativeLayout>

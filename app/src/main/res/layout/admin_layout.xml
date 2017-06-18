@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Admin"
+    android:background="@drawable/admin"
+
+    >
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog"
+        android:id="@+id/spinner_month"
+        android:layout_marginTop="14dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+    </Spinner>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Products"
+        android:textColor="#ffff"
+        android:id="@+id/textView"
+        android:layout_marginTop="17dp"
+        android:textSize="20sp"
+        android:padding="4dp"
+        android:layout_below="@+id/spinner_month"
+        android:layout_alignParentStart="true" />
+
+
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner1"
+        android:padding="5dp"
+        android:spinnerMode="dialog"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true">
+
+    </Spinner>
+
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantity"
+        android:textColor="#fff"
+        android:textSize="23sp"
+        android:padding="4dp"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/spinner1"
+        android:layout_alignParentStart="true" />
+    <EditText
+        android:id="@+id/edit1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffff"
+        android:hint="eg. 1 sack then write only 1 "
+        android:paddingTop="3dp"
+        android:textColorHint="#ffff"
+        android:layout_below="@+id/text2"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buy"
+        android:id="@+id/buy"
+        android:padding="10dp"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/edit1"
+        android:layout_alignStart="@+id/text2"
+
+        android:textColor="@color/colorPrimaryDark"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Sell"
+        android:id="@+id/sell"
+        android:layout_alignBaseline="@+id/buy"
+        android:layout_alignBottom="@+id/buy"
+        android:layout_toEndOf="@+id/buy"
+
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+
+
+</RelativeLayout>
