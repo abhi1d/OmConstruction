@@ -41,6 +41,14 @@
         <activity android:name=".SingleItemSelected">
 
         </activity>
+        <activity android:name=".ProgramDetails"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".Rewards"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
 
     </application>
 
