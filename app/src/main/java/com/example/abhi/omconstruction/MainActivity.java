@@ -20,7 +20,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    WebView mwebView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,7 +84,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(i);
 
         } else if (id == R.id.nav_products) {
-            Intent i=new Intent(this,productDetails.class);
+            Intent i=new Intent(this,interStageOfProductDetail.class);
             startActivity(i);
 
         } else if (id ==R.id.nav_data_entry ) {
