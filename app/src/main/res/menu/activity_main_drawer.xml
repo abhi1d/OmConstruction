@@ -7,17 +7,18 @@
             android:icon="@drawable/home"
             android:title="Home" />
         <item
-            android:id="@+id/nav_program_details"
-            android:icon="@android:drawable/ic_dialog_map"
-            android:title="Program Dtails" />
+            android:id="@+id/nav_maitree"
+            android:icon="@drawable/maitree"
+            android:title="Maitree" />
         <item
             android:id="@+id/nav_products"
             android:icon="@android:drawable/dialog_holo_dark_frame"
             android:title="Products" />
         <item
-            android:id="@+id/nav_rewards"
-            android:icon="@android:drawable/btn_star_big_on"
-            android:title="Rewards" />
+            android:id="@+id/nav_graph"
+            android:icon="@drawable/graph"
+            android:title="Graph"/>
+
     </group>
 
     <item android:title="Admin">

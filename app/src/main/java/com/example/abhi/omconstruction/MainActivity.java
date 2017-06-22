@@ -87,15 +87,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         if (id == R.id.nav_home) {
 
-        } else if (id == R.id.nav_program_details) {
-            Intent i=new Intent(this,ProgramDetails.class);
-            startActivity(i);
-
-        } else if (id == R.id.nav_rewards) {
-            Intent i=new Intent(this,Rewards.class);
-            startActivity(i);
-
-        } else if (id == R.id.nav_products) {
+        }  else if (id == R.id.nav_products) {
             Intent i=new Intent(this,InterStage.class);
             startActivity(i);
 
@@ -106,6 +98,12 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_notify) {
             Toast.makeText(this, id+ ": error", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_maitree) {
+            Intent in=new Intent(this,Maitree.class);
+            startActivity(in);
+        } else if (id == R.id.nav_graph) {
+            Intent in=new Intent(this,Graph.class);
+            startActivity(in);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

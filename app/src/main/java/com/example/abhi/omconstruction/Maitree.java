@@ -1,9 +1,7 @@
 package com.example.abhi.omconstruction;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,13 +11,12 @@ import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ProgressBar;
 
 /**
- * Created by abhi on 20/6/17.
+ * Created by abhi on 23/6/17.
  */
 
-public class Rewards extends AppCompatActivity {
+public class Maitree extends AppCompatActivity {
     SwipeRefreshLayout mSwipeRefresh;
     ProgressDialog pd;
     WebView mWebViewRewards;
@@ -31,7 +28,7 @@ public class Rewards extends AppCompatActivity {
         swipeRefresh();
         pd = new ProgressDialog(this);
         pd.setMessage("Loading...");
-        String url="http://www.maitree.co.in/products/list_products";
+        String url="http://www.maitree.co.in";
         mWebViewRewards =(WebView)findViewById(R.id.web_view_rewards);
         mWebViewRewards.loadUrl(url);
         mWebViewRewards.getSettings().setUseWideViewPort(true);
