@@ -25,15 +25,19 @@ public class productDetails extends AppCompatActivity{
         // Binding resources Array to ListAdapter
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,prdts);
         lv.setAdapter(adapter);
+        Toast.makeText(getApplicationContext(),"hello0",Toast.LENGTH_SHORT).show();
         // listening to single list item on click
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 // When clicked, show a toast with the TextView text
-                String data=(String) (lv.getItemAtPosition(position));
+                Toast.makeText(getApplicationContext(),"hello1",Toast.LENGTH_SHORT).show();
+                String value = lv.getSelectedItem().toString();
+                Toast.makeText(getApplicationContext(),"hello2",Toast.LENGTH_SHORT).show();
                 Intent in=new Intent(getApplicationContext(),SingleItemSelected.class);
-                in.putExtra("product",data);
+                in.putExtra("product",value);
                 in.putExtra("month",month);
+              //  Toast.makeTexta(getApplicationContext(),data+month,Toast.LENGTH_SHORT).show();
                 startActivity(in);
 
             }

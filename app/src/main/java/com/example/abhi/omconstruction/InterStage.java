@@ -14,7 +14,7 @@ import android.widget.Toast;
  * Created by abhi on 20/6/17.
  */
 
-public class interStageOfProductDetail extends AppCompatActivity {
+public class InterStage extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +33,7 @@ public class interStageOfProductDetail extends AppCompatActivity {
                                     int position, long id) {
                 // When clicked, show a toast with the TextView text
                 int pos = parent.getPositionForView(view);
-               // Toast.makeText(getApplicationContext(),pos + "",Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getApplicationContext(),pos + "",Toast.LENGTH_SHORT).show();
                 Intent in=new Intent(getApplicationContext(),productDetails.class);
                 in.putExtra("month",pos);
                 startActivity(in);

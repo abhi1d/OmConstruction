@@ -49,15 +49,10 @@
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
-        <activity android:name=".interStageOfProductDetail"
-            android:label="Select Month">
+         <activity android:name=".InterStage"
+             android:label="Select Month">
 
-        </activity>
-        <activity android:name=".SelectProduct"
-            android:label="Select Month">
-
-        </activity>
-
+         </activity>
     </application>
 
 </manifest>

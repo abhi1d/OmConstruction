@@ -75,6 +75,7 @@ public class SingleItemSelected extends AppCompatActivity {
         toolbar.setTitle(cement);
         textview_total = (TextView) findViewById(R.id.total_data);
         mDatabase = FirebaseDatabase.getInstance();
+        Toast.makeText(this, month, Toast.LENGTH_SHORT).show();
 
         if (month == 0) {
             Toast.makeText(this, "select any month", Toast.LENGTH_SHORT).show();
