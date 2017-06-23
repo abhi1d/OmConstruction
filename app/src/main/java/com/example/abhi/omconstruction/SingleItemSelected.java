@@ -1,11 +1,18 @@
 package com.example.abhi.omconstruction;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +28,9 @@ import com.google.firebase.database.ValueEventListener;
  */
 
 public class SingleItemSelected extends AppCompatActivity {
+
+    SwipeRefreshLayout mSwipeRefresh;
+    ProgressDialog pd;
     TextView textview_sell,textview_buy,textview_total;
     String Data_buy,Data_sell;
     int data_sell,data_buy;
@@ -116,6 +126,7 @@ public class SingleItemSelected extends AppCompatActivity {
         }
     }
 
+
     public void reference(final DatabaseReference mDataRef2,final DatabaseReference mDataRef1,final String cement)
     {
         final ValueEventListener listener = new ValueEventListener() {
@@ -153,5 +164,7 @@ public class SingleItemSelected extends AppCompatActivity {
             }
         });
     }
+
+
 
 }

@@ -23,7 +23,7 @@ public class Maitree extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.rewards);
+        setContentView(R.layout.maitree);
         mSwipeRefresh=(SwipeRefreshLayout)findViewById(R.id.swipe_refresh);
         swipeRefresh();
         pd = new ProgressDialog(this);
