@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity
 
         }  else if (id == R.id.nav_products) {
             Intent i=new Intent(this,InterStage.class);
+
             startActivity(i);
 
         } else if (id ==R.id.nav_data_entry ) {
@@ -102,7 +103,8 @@ public class MainActivity extends AppCompatActivity
             Intent in=new Intent(this,Maitree.class);
             startActivity(in);
         } else if (id == R.id.nav_graph) {
-            Intent in=new Intent(this,Graph.class);
+            Intent in=new Intent(this,SelectMonthGraph.class);
+
             startActivity(in);
         }
 

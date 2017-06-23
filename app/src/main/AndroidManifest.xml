@@ -52,6 +52,9 @@
         <activity android:name=".Graph"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity android:name=".SelectMonthGraph"
+            android:label="Select Month">
+        </activity>
     </application>
 
 </manifest>
