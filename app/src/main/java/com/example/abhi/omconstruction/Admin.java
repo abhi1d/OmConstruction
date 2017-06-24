@@ -37,7 +37,7 @@ public class Admin extends AppCompatActivity {
     FirebaseDatabase mDatabase;
     DatabaseReference mDataRef2, mDataRef1;
     DatabaseReference rNoneSell, rNoneBuy, rJanSell, rJanBuy, rFebSell, rFebBuy, rMarchSell, rMarchBuy, rAprSell, rAprBuy,
-            rMaySell, rMayBuy, rJuneSell, rJuneBuy, rJulySell, rJulyBuy, rAugSell, rAugBuy, rSeptSell, rSeptBuy, rOctSell, rOctBuy, rNovSell, rNovBuy, rDecSell, rDecBuy, rBuy, rSell, rTotalBuy, rTotalSell;
+            rMaySell, rMayBuy, rJuneSell, rJuneBuy, rJulySell, rJulyBuy, rAugSell, rAugBuy, rSeptSell, rSeptBuy, rOctSell, rOctBuy, rNovSell, rNovBuy, rDecSell, rDecBuy, rBuy, rSell, rTotalBuy, rTotalSell,rStock;
     int number;
     String mData, cement, sack;
     public View view;
@@ -92,7 +92,7 @@ public class Admin extends AppCompatActivity {
         rSell = mDatabase.getReference("Products/Sell");
         rTotalBuy = mDatabase.getReference("Products/Total/Buy");
         rTotalSell = mDatabase.getReference("Products/Total/Sell");
-
+        rStock = mDatabase.getReference("Products/Stock");
         // Inflate the layout for this fragment
 
         spinnerOfProduct = (Spinner) findViewById(R.id.spinner1);
@@ -350,7 +350,6 @@ public class Admin extends AppCompatActivity {
             }
         });
     }
-
     private void updateData(final String mData, final String edit_text, final DatabaseReference ref) {
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -385,6 +384,46 @@ public class Admin extends AppCompatActivity {
 
         });
     }
+/*
+    public void stockData(final DatabaseReference mDataRef2,final DatabaseReference mDataRef1,final String cement)
+    {
+        final ValueEventListener listener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                Data_buy = dataSnapshot.child(cement).getValue().toString();
+                data_buy = Integer.parseInt(Data_buy);
+                textview_buy.setText(Data_buy);
+                //stock value
+                String total = Integer.toString(data_buy - data_sell);
+                textview_total.setText(total);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+
+        mDataRef2.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                Data_sell = dataSnapshot.child(cement).getValue().toString();
+                data_sell = Integer.parseInt(Data_sell);
+                textview_sell.setText(Data_sell);
+                mDataRef1.addListenerForSingleValueEvent(listener);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+    */
+
 
     public void buy(String edit_text, DatabaseReference xref) {
         if (TextUtils.isEmpty(edit_text)) {
@@ -399,6 +438,7 @@ public class Admin extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Updating the data....", Toast.LENGTH_SHORT).show();
             updateData(mData, edit_text, xref);
             updateData(mData, edit_text, rTotalBuy);
+           // stockData(mData,edit_text,rStock);
             //after clicking the button soft keyboard will hide from window
             closeKeyboard(getApplicationContext(), e1.getWindowToken());
         } catch (NumberFormatException e) {
@@ -420,6 +460,7 @@ public class Admin extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Updating the data....", Toast.LENGTH_SHORT).show();
             updateData(mData, edit_text, xref);
             updateData(mData, edit_text, rTotalSell);
+           // stockData(mData,edit_text,rStock);
             //after clicking the button soft keyboard will hide from window
             closeKeyboard(getApplication(), e1.getWindowToken());
         } catch (NumberFormatException e) {

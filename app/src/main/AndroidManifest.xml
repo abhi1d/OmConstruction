@@ -55,6 +55,10 @@
         <activity android:name=".SelectMonthGraph"
             android:label="Select Month">
         </activity>
+        <activity android:name=".HomeActivity"
+            >
+
+        </activity>
     </application>
 
 </manifest>
