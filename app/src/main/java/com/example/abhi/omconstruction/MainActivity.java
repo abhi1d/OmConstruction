@@ -23,6 +23,10 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -95,8 +99,15 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.this_month) {
+            DateFormat dateFormat = new SimpleDateFormat("MM");
+            Date date =new Date();
+            int month = Integer.parseInt(dateFormat.format(date))+1;
+            Intent in=new Intent(getApplicationContext(),GraphThisMonth.class);
+            in.putExtra("month",month);
+            startActivity(in);
             return true;
+
         }
 
         return super.onOptionsItemSelected(item);

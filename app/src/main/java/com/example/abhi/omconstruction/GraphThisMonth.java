@@ -19,7 +19,7 @@ import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
 
-public class Graph extends AppCompatActivity {
+public class GraphThisMonth extends AppCompatActivity {
 
     FirebaseDatabase mDatabase;
 
@@ -29,7 +29,7 @@ public class Graph extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.graph);
+        setContentView(R.layout.graph_this_month);
         /***********************************
          *
          */
@@ -70,45 +70,44 @@ public class Graph extends AppCompatActivity {
 
 
         Intent i = getIntent();
-        final String month = i.getStringExtra("month");
+        final int month = i.getIntExtra("month",0);
         TextView textView = (TextView) findViewById(R.id.textView_month);
-        textView.setText(month);
         //getting data from firebase
-        if (month.equals("none")) {
+        if (month == 0) {
             Toast.makeText(this, "select any month", Toast.LENGTH_SHORT).show();
-        } else if (month.equals("JANUARY") ) {
+        } else if (month == 1 ) {
             reference(rJanSell);
 
-        } else if (month.equals("FEBRUARY") ) {
+        } else if (month == 2 ) {
             reference(rFebSell);
 
-        } else if (month.equals("MARCH") ) {
+        } else if (month == 3 ) {
             reference(rMarchSell);
 
-        } else if (month.equals("APRIL") ) {
+        } else if (month == 4 ) {
             reference(rAprSell);
-        } else if (month.equals("MAY") ) {
+        } else if (month == 5) {
             reference(rMaySell);
 
-        } else if (month.equals("JUNE") ) {
+        } else if (month == 6 ) {
 
             reference(rJuneSell);
-        } else if (month.equals("JULY") ) {
+        } else if (month == 7 ) {
             reference(rJulySell);
 
-        } else if (month.equals("AUGUST") ) {
+        } else if (month == 8 ) {
             reference(rAugSell);
 
-        } else if (month.equals("SEPTEMBER") ) {
+        } else if (month == 9 ) {
 
             reference(rSeptSell);
-        } else if (month.equals("OCTOBER") ) {
+        } else if (month == 10 ) {
             reference(rOctSell);
 
-        } else if (month.equals("NOVEMBER") ) {
+        } else if (month == 11 ) {
 
             reference(rNovSell);
-        } else if (month.equals("DECEMBER") ) {
+        } else if (month == 12 ) {
 
             reference(rDecSell);
 
@@ -128,8 +127,8 @@ public class Graph extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-               // Data_sell = dataSnapshot.child("Lafarege").getValue().toString();
-              int data_sell_laf = Integer.parseInt(dataSnapshot.child("Lafarge").getValue().toString());
+                // Data_sell = dataSnapshot.child("Lafarege").getValue().toString();
+                int data_sell_laf = Integer.parseInt(dataSnapshot.child("Lafarge").getValue().toString());
                 int data_sell_BG = Integer.parseInt(dataSnapshot.child("Birla Gold").getValue().toString());
                 int data_sell_sh = Integer.parseInt(dataSnapshot.child("Shree").getValue().toString());
                 int data_sell_maha = Integer.parseInt(dataSnapshot.child("Mahashakti").getValue().toString());

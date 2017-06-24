@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,8 +29,13 @@ import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.zip.DataFormatException;
 
 
 public class CardFragment extends Fragment {
@@ -106,6 +112,7 @@ public class CardFragment extends Fragment {
         public ImageView coverImageView;
         public ImageView likeImageView;
         public ImageView shareImageView;
+        public Button stock;
 
         public MyViewHolder(View v) {
             super(v);
@@ -113,6 +120,7 @@ public class CardFragment extends Fragment {
             coverImageView = (ImageView) v.findViewById(R.id.coverImageView);
             likeImageView = (ImageView) v.findViewById(R.id.likeImageView);
             shareImageView = (ImageView) v.findViewById(R.id.shareImageView);
+            stock = (Button) v.findViewById(R.id.button_stock);
             likeImageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -159,7 +167,26 @@ public class CardFragment extends Fragment {
 
                 }
             });
+            stock.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
+                    String data = titleTextView.getText().toString();
+                    DateFormat dateFormat = new SimpleDateFormat("MM");
+                    Date date =new Date();
+                    int month = Integer.parseInt(dateFormat.format(date))+1;
+                   // Toast.makeText(getContext(),String.valueOf(month),Toast.LENGTH_LONG).show();
+
+                    Intent in=new Intent(getContext(),SingleItemSelected.class);
+                    in.putExtra("product",data);
+                    in.putExtra("month",month);
+                    startActivity(in);
+
+
+
+
+                }
+            });
 
 
         }
