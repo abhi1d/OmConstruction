@@ -71,7 +71,7 @@
                 android:layout_weight="0.99"
                 android:text="In Stock"
                 android:textColor="#ffff"
-                android:background="@color/colorPrimary"/>
+                android:background="@color/orange"/>
 
             <ImageView
                 android:id="@+id/likeImageView"
