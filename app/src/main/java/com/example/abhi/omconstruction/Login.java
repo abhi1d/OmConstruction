@@ -43,7 +43,7 @@ public class Login extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(eEmail.getText().toString().equals("") && ePass.getText().toString().equals(""))
+                if(eEmail.getText().toString().equals("ankit@omc.com") && ePass.getText().toString().equals("Bittu@123"))
                 {
                     Toast.makeText(getApplicationContext(),"Sign in ...",Toast.LENGTH_SHORT).show();
                     Intent in=new Intent(getApplicationContext(),MainActivity.class);
