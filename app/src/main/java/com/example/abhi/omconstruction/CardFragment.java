@@ -118,34 +118,9 @@ public class CardFragment extends Fragment {
             super(v);
             titleTextView = (TextView) v.findViewById(R.id.titleTextView);
             coverImageView = (ImageView) v.findViewById(R.id.coverImageView);
-            likeImageView = (ImageView) v.findViewById(R.id.likeImageView);
+            //likeImageView = (ImageView) v.findViewById(R.id.likeImageView);
             shareImageView = (ImageView) v.findViewById(R.id.shareImageView);
             stock = (Button) v.findViewById(R.id.button_stock);
-            likeImageView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-
-                    int id = (int)likeImageView.getTag();
-                    if( id == R.drawable.interrupt){
-
-                        likeImageView.setTag(R.drawable.interrupt);
-                        likeImageView.setImageResource(R.drawable.interrupt);
-
-                        Toast.makeText(getActivity(),titleTextView.getText()+" added to favourites",Toast.LENGTH_SHORT).show();
-
-                    }else{
-
-                        likeImageView.setTag(R.drawable.interrupt);
-                        likeImageView.setImageResource(R.drawable.interrupt);
-                        Toast.makeText(getActivity(),titleTextView.getText()+" removed from favourites",Toast.LENGTH_SHORT).show();
-
-
-                    }
-
-                }
-            });
-
 
 
             shareImageView.setOnClickListener(new View.OnClickListener() {
@@ -174,7 +149,7 @@ public class CardFragment extends Fragment {
                     String data = titleTextView.getText().toString();
                     DateFormat dateFormat = new SimpleDateFormat("MM");
                     Date date =new Date();
-                    int month = Integer.parseInt(dateFormat.format(date))+1;
+                    int month = Integer.parseInt(dateFormat.format(date));
                    // Toast.makeText(getContext(),String.valueOf(month),Toast.LENGTH_LONG).show();
 
                     Intent in=new Intent(getContext(),SingleItemSelected.class);

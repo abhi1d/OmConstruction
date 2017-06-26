@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.this_month) {
             DateFormat dateFormat = new SimpleDateFormat("MM");
             Date date =new Date();
-            int month = Integer.parseInt(dateFormat.format(date))+1;
+            int month = Integer.parseInt(dateFormat.format(date));
             Intent in=new Intent(getApplicationContext(),GraphThisMonth.class);
             in.putExtra("month",month);
             startActivity(in);
