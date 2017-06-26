@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "499707997496-arebl0ov1q8e9h53r7a7ul95t71in229.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.abhi.omconstruction",
+            "certificate_hash": "3d7b12505f3452ad3b11a098ba33718f50748575"
+          }
+        },
+        {
           "client_id": "499707997496-lteq4n3jvukkjdf5rs9osjoubqhkb5o8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

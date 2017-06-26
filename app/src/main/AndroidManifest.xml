@@ -9,6 +9,14 @@
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!-- [START firebase_service] -->
+        <service
+            android:name=".Fi">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <!-- [END firebase_service] -->
         <activity
             android:name=".Splash"
             android:theme="@style/AppTheme.NoActionBar">

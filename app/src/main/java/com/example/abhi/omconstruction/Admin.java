@@ -111,7 +111,7 @@ public class Admin extends AppCompatActivity {
                 int Hold = parent.getSelectedItemPosition();
 
                 if (Hold == 0) {
-                    Toast.makeText(getApplicationContext(), "Select any product", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), "Select any product", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -146,7 +146,21 @@ public class Admin extends AppCompatActivity {
                 int Hold = parent.getSelectedItemPosition();
 
                 if (Hold == 0) {
-                    Toast.makeText(getApplicationContext(), "select any month", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), "select any month", Toast.LENGTH_SHORT).show();
+                    buy.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view1) {
+                          Toast.makeText(getApplicationContext(),"Please select a month",Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+                    sell.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view1) {
+                            Toast.makeText(getApplicationContext(),"Please select a month",Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
                 } else if (Hold == 1) {
                     buy.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -301,7 +315,7 @@ public class Admin extends AppCompatActivity {
                     });
                     sell.setOnClickListener(new View.OnClickListener() {
                         @Override
-                        public void onClick(View view1) {
+                        public void onClick(View view1) { Snackbar.make(view,"Please select a month",Snackbar.LENGTH_INDEFINITE).show();
                             String text = e1.getText().toString();
                             sell(text, rOctSell);
                         }
@@ -319,7 +333,7 @@ public class Admin extends AppCompatActivity {
                         @Override
                         public void onClick(View view1) {
                             String text = e1.getText().toString();
-                            sell(text, rNovSell);
+                            sell(text, rNovSell); Snackbar.make(view,"Please select a month",Snackbar.LENGTH_LONG).show();
                         }
                     });
 
@@ -427,44 +441,56 @@ public class Admin extends AppCompatActivity {
 
     public void buy(String edit_text, DatabaseReference xref) {
         if (TextUtils.isEmpty(edit_text)) {
-            Snackbar.make(view, "Enter the quantity", Snackbar.LENGTH_LONG).show();
-            return;
+            Toast.makeText(getApplicationContext(), "Enter the quantity", Toast.LENGTH_SHORT).show();
+            return ;
         }
 
         try {
             number = Integer.parseInt(edit_text);
             Log.d("", number + " is a number");
             mData = spinnerOfProduct.getSelectedItem().toString();
-            Toast.makeText(getApplicationContext(), "Updating the data....", Toast.LENGTH_SHORT).show();
-            updateData(mData, edit_text, xref);
-            updateData(mData, edit_text, rTotalBuy);
-           // stockData(mData,edit_text,rStock);
-            //after clicking the button soft keyboard will hide from window
-            closeKeyboard(getApplicationContext(), e1.getWindowToken());
-        } catch (NumberFormatException e) {
-            Snackbar.make(view, "Please enter only Integer values", Snackbar.LENGTH_LONG).show();
-        }
+
+            if (mData.equals("(none)")){
+               Toast.makeText(getApplicationContext(),"Select a Product",Toast.LENGTH_SHORT).show();
+                return ;
+            }else{
+                Toast.makeText(getApplicationContext(), "Updating the data....", Toast.LENGTH_SHORT).show();
+                updateData(mData, edit_text, xref);
+                updateData(mData, edit_text, rTotalBuy);
+                // stockData(mData,edit_text,rStock);
+                //after clicking the button soft keyboard will hide from window
+                closeKeyboard(getApplicationContext(), e1.getWindowToken());
+            }
+           }catch (NumberFormatException e) {
+            Toast.makeText(getApplicationContext(), "Please enter only Integer values", Toast.LENGTH_SHORT).show();
+          }
 
     }
 
     public void sell(String edit_text, DatabaseReference xref) {
 
         if (TextUtils.isEmpty(edit_text)) {
-            Snackbar.make(view, "Enter the quantity", Snackbar.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Enter the quantity", Toast.LENGTH_SHORT).show();
             return;
         }
         try {
             number = Integer.parseInt(edit_text);
             Log.i("", number + " is a number");
             mData = spinnerOfProduct.getSelectedItem().toString();
-            Toast.makeText(getApplicationContext(), "Updating the data....", Toast.LENGTH_SHORT).show();
-            updateData(mData, edit_text, xref);
-            updateData(mData, edit_text, rTotalSell);
-           // stockData(mData,edit_text,rStock);
-            //after clicking the button soft keyboard will hide from window
-            closeKeyboard(getApplication(), e1.getWindowToken());
-        } catch (NumberFormatException e) {
-            Snackbar.make(view, "Please enter only Integer values", Snackbar.LENGTH_LONG).show();
+
+            if (mData.equals("(none)")){
+                Toast.makeText(getApplicationContext(),"Select a Product",Toast.LENGTH_SHORT).show();
+                return ;
+            }else {
+                Toast.makeText(getApplicationContext(), "Updating the data....", Toast.LENGTH_SHORT).show();
+                updateData(mData, edit_text, xref);
+                updateData(mData, edit_text, rTotalSell);
+                // stockData(mData,edit_text,rStock);
+                //after clicking the button soft keyboard will hide from window
+                closeKeyboard(getApplication(), e1.getWindowToken());
+            }
+        }catch (NumberFormatException e) {
+            Toast.makeText(getApplicationContext(), "Please enter only Integer values", Toast.LENGTH_SHORT).show();
         }
     }
 
